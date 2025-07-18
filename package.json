@@ -1,0 +1,66 @@
+{
+  "name": "smart-codeforces-helper",
+  "displayName": "Smart Codeforces Helper",
+  "publisher": "sahilkumar",
+  "description": "The extension will automate competitive programming workflow be extracting problem details, generating ready-to-use C++ boiler code, providing one-click test execution with performance metrics and preparing submission-ready code.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:smart-codeforces-helper.helloWorld",
+    "onCommand:smart-codeforces-helper.getTime",
+    "onCommand:smart-codeforces-helper.loadProblem",
+    "onCommand:smart-codeforces-helper.openProblemViewer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "smart-codeforces-helper.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "smart-codeforces-helper.getTime",
+        "title": "Show Current Time"
+      },
+      {
+        "command": "smart-codeforces-helper.loadProblem",
+        "title": "Load Problem"
+      },
+      {
+        "command": "smart-codeforces-helper.openProblemViewer",
+        "title": "Open Problem"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npx tsc -p ./",
+    "build": "npm run compile",
+    "watch": "npx tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@mistralai/mistralai": "^1.7.1",
+    "dotenv": "^16.5.0",
+    "puppeteer": "^24.10.0"
+  }
+}
